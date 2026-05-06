@@ -6,12 +6,12 @@ import InkWellQuoteCard from "./InkWellQuoteCard.jsx";
 const LIMIT = 30;
 
 const SkeletonCard = () => (
-    <div className="break-inside-avoid mb-5 bg-white rounded-2xl p-6 border border-gray-100 animate-pulse flex flex-col gap-3 min-h-[160px]">
-        <div className="h-3 bg-gray-100 rounded-full w-full" />
-        <div className="h-3 bg-gray-100 rounded-full w-5/6" />
-        <div className="h-3 bg-gray-100 rounded-full w-4/6" />
-        <div className="h-3 bg-gray-100 rounded-full w-3/6" />
-        <div className="mt-auto pt-4 border-t border-gray-50 h-3 bg-gray-100 rounded-full w-1/3" />
+    <div className="break-inside-avoid mb-5 bg-[#fcfaf5] rounded-none p-6 border border-[#e6dcc3] animate-pulse flex flex-col gap-3 min-h-[160px] shadow-[2px_2px_10px_rgba(139,69,19,0.05)]">
+        <div className="h-3 bg-[#e6dcc3] w-full" />
+        <div className="h-3 bg-[#e6dcc3] w-5/6" />
+        <div className="h-3 bg-[#e6dcc3] w-4/6" />
+        <div className="h-3 bg-[#e6dcc3] w-3/6" />
+        <div className="mt-auto pt-4 border-t border-[#e6dcc3] h-3 bg-[#e6dcc3] w-1/3" />
     </div>
 );
 
@@ -58,20 +58,20 @@ const InkWellQuoteGrid = ({ onCardClick }) => {
                     <button
                         onClick={() => setPage((p) => p + 1)}
                         disabled={isFetching}
-                        className="inline-flex items-center gap-2.5 bg-gray-900 hover:bg-gray-700 disabled:opacity-50 text-white font-medium px-8 py-3 rounded-full transition-all duration-200 text-sm"
+                        className="inline-flex items-center gap-2.5 bg-[#fcfaf5] hover:bg-[#efebe9] disabled:opacity-50 text-[#5d4037] font-serif font-bold px-8 py-3 transition-all duration-200 text-sm border border-[#e6dcc3] uppercase tracking-widest shadow-[0_4px_6px_rgba(139,69,19,0.05)]"
                     >
                         {isFetching ? (
                             <>
-                                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                Loading…
+                                <span className="w-4 h-4 border-2 border-[#5d4037]/30 border-t-[#5d4037] rounded-full animate-spin" />
+                                Retrieving...
                             </>
                         ) : (
-                            "Load more quotes"
+                            "Unfurl More Pages"
                         )}
                     </button>
                 ) : accumulated.length > 0 && (
-                    <p className="text-gray-400 text-sm">
-                        All {accumulated.length} quotes loaded.
+                    <p className="text-[#8b4513]/60 text-sm font-serif italic">
+                        All {accumulated.length} passages have been unsealed.
                     </p>
                 )}
             </div>

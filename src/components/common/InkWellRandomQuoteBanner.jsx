@@ -18,39 +18,37 @@ const InkWellRandomQuoteBanner = () => {
     }, []);
 
     return (
-        <section className="relative mb-12">
+        <section className="relative mb-12 shadow-2xl rounded-3xl">
             {/* Background */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-950 via-indigo-900 to-blue-900 overflow-hidden">
-                <div className="absolute inset-0 opacity-30"
-                    style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #818cf8 0%, transparent 50%), radial-gradient(circle at 80% 20%, #c084fc 0%, transparent 40%)" }}
-                />
-                <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-3xl opacity-20"
-                    style={{ background: "radial-gradient(circle, #f472b6, transparent)" }}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#2c1e16] via-[#3e2723] to-[#4e342e] overflow-hidden border border-[#5d4037]">
+                <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')]"></div>
+                <div className="absolute inset-0 opacity-10"
+                    style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #d7ccc8 0%, transparent 50%), radial-gradient(circle at 80% 20%, #a1887f 0%, transparent 40%)" }}
                 />
             </div>
 
-            <div className="relative z-10 px-8 py-14 md:py-20 flex flex-col items-center text-center max-w-3xl mx-auto">
-                <p className="text-indigo-300 uppercase tracking-[0.2em] text-xs font-semibold mb-8">
-                    ✦ &nbsp; Quote of the Moment &nbsp; ✦
+            <div className="relative z-10 px-8 py-16 md:py-24 flex flex-col items-center text-center max-w-4xl mx-auto">
+                <p className="text-[#a1887f] uppercase tracking-[0.3em] text-[10px] font-bold mb-10 font-serif">
+                    ~ &nbsp; Passage of the Moment &nbsp; ~
                 </p>
 
-                <div className="min-h-[120px] flex flex-col items-center justify-center">
+                <div className="min-h-[140px] flex flex-col items-center justify-center">
                     {isFetching ? (
-                        <div className="flex gap-1.5 items-center justify-center h-10">
+                        <div className="flex gap-2 items-center justify-center h-10">
                             {[0, 1, 2].map(i => (
                                 <span key={i}
-                                    className="w-2 h-2 bg-white/50 rounded-full animate-bounce"
+                                    className="w-2 h-2 bg-[#d7ccc8]/50 rounded-full animate-bounce"
                                     style={{ animationDelay: `${i * 0.15}s` }}
                                 />
                             ))}
                         </div>
                     ) : (
                         <>
-                            <p className="text-white text-2xl md:text-3xl font-light leading-relaxed tracking-wide mb-6"
-                                style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
-                                &#8220;{quote?.content}&#8221;
+                            <p className="text-[#efebe9] text-3xl md:text-4xl font-serif italic leading-relaxed tracking-wide mb-8 drop-shadow-md"
+                                style={{ fontFamily: "'Playfair Display', 'Times New Roman', serif" }}>
+                                "{quote?.content}"
                             </p>
-                            <p className="text-indigo-300 text-sm font-semibold tracking-widest uppercase">
+                            <p className="text-[#d7ccc8] text-sm font-serif font-bold tracking-widest uppercase">
                                 — {quote?.author}
                             </p>
                         </>
@@ -60,14 +58,14 @@ const InkWellRandomQuoteBanner = () => {
                 <button
                     onClick={handleRegenerate}
                     disabled={isFetching}
-                    className="mt-10 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white border border-white/20 bg-white/10 hover:bg-white/20 disabled:opacity-40 transition-all duration-200 backdrop-blur-sm"
+                    className="mt-12 inline-flex items-center gap-2 px-6 py-2.5 rounded text-xs font-serif font-bold text-[#3e2723] bg-[#d7ccc8] hover:bg-[#efebe9] disabled:opacity-40 transition-all duration-300 shadow-[0_0_15px_rgba(215,204,200,0.2)] uppercase tracking-widest"
                 >
                     <svg className={`w-3.5 h-3.5 ${isFetching ? "animate-spin" : ""}`}
                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                    New quote
+                    Turn the Page
                 </button>
             </div>
         </section>

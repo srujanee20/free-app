@@ -1,7 +1,7 @@
 import { useState } from "react";
-import RandomQuoteBanner from "../common/RandomQuoteBanner.jsx";
-import QuoteGrid from "../common/QuoteGrid.jsx";
-import QuoteModal from "../common/QuoteModal.jsx";
+import InkWellRandomQuoteBanner from "../common/InkWellRandomQuoteBanner.jsx";
+import InkWellQuoteGrid from "../common/InkWellQuoteGrid.jsx";
+import InkWellQuoteModal from "../common/InkWellQuoteModal.jsx";
 
 const InkwellPage = () => {
     const [selectedQuote, setSelectedQuote] = useState(null);
@@ -20,18 +20,18 @@ const InkwellPage = () => {
                     </p>
                 </div>
 
-                <RandomQuoteBanner />
+                <InkWellRandomQuoteBanner />
 
                 <div className="mb-6 flex items-center gap-4">
                     <h2 className="text-lg font-semibold text-gray-900 whitespace-nowrap">All Quotes</h2>
                     <div className="flex-1 h-px bg-gray-200" />
                 </div>
 
-                <QuoteGrid onCardClick={setSelectedQuote} />
+                <InkWellQuoteGrid onCardClick={setSelectedQuote} />
             </div>
 
             {selectedQuote && (
-                <QuoteModal quote={selectedQuote} onClose={() => setSelectedQuote(null)} />
+                <InkWellQuoteModal quote={selectedQuote} onClose={() => setSelectedQuote(null)} />
             )}
         </div>
     );

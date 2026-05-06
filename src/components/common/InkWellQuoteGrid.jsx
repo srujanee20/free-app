@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchQuotes } from "../../clients/freeApiQuoteClient.js";
-import QuoteCard from "./QuoteCard.jsx";
+import InkWellQuoteCard from "./InkWellQuoteCard.jsx";
 
 const LIMIT = 30;
 
@@ -15,7 +15,7 @@ const SkeletonCard = () => (
     </div>
 );
 
-const QuoteGrid = ({ onCardClick }) => {
+const InkWellQuoteGrid = ({ onCardClick }) => {
     const [page, setPage] = useState(1);
     const [accumulated, setAccumulated] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
@@ -45,7 +45,7 @@ const QuoteGrid = ({ onCardClick }) => {
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
                 {accumulated.map((quote) => (
                     <div key={quote.id} className="break-inside-avoid mb-5">
-                        <QuoteCard quote={quote} onClick={onCardClick} />
+                        <InkWellQuoteCard quote={quote} onClick={onCardClick} />
                     </div>
                 ))}
                 {isFetching && accumulated.length === 0 &&
@@ -79,4 +79,4 @@ const QuoteGrid = ({ onCardClick }) => {
     );
 };
 
-export default QuoteGrid;
+export default InkWellQuoteGrid;

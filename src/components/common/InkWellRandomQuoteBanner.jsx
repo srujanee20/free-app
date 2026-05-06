@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchRandomQuote } from "../../clients/freeApiQuoteClient.js";
 
-const RandomQuoteBanner = () => {
+const InkWellRandomQuoteBanner = () => {
     const [refreshKey, setRefreshKey] = useState(0);
 
     const { data, isFetching } = useQuery({
@@ -74,4 +74,4 @@ const RandomQuoteBanner = () => {
     );
 };
 
-export default RandomQuoteBanner;
+export default InkWellRandomQuoteBanner;

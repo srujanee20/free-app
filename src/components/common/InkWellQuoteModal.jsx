@@ -1,4 +1,4 @@
-const QuoteModal = ({ quote, onClose }) => {
+const InkWellQuoteModal = ({ quote, onClose }) => {
     if (!quote) return null;
     return (
         <div
@@ -50,4 +50,4 @@ const QuoteModal = ({ quote, onClose }) => {
     );
 };
 
-export default QuoteModal;
+export default InkWellQuoteModal;

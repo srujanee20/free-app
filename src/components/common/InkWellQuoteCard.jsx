@@ -1,4 +1,4 @@
-const QuoteCard = ({ quote, onClick }) => (
+const InkWellQuoteCard = ({ quote, onClick }) => (
     <div
         onClick={() => onClick(quote)}
         className="group relative bg-white rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 border border-gray-100 hover:border-indigo-200 flex flex-col"
@@ -24,4 +24,4 @@ const QuoteCard = ({ quote, onClick }) => (
     </div>
 );
 
-export default QuoteCard;
+export default InkWellQuoteCard;

@@ -1,14 +1,14 @@
 import Header from "../common/Header.jsx";
 import Footer from "../common/Footer.jsx";
+import { Outlet } from "react-router-dom";
 
-const InAppLayout = ({ children }) => {
-
+const InAppLayout = () => {
     return (
-        <>
+        <div className="flex flex-col min-h-screen bg-gray-50">
             <Header/>
-            {children}
+            <Outlet />
             <Footer/>
-        </>
+        </div>
     );
 };
 

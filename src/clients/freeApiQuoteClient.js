@@ -1,19 +1,16 @@
 import {freeApiClient} from "../configs/axiosConfig.js";
 
-export const fetchQuote = async () => {
-    try {
-        const response = await freeApiClient.get("/v1/public/quotes");
-        return response.data;
-    } catch (error) {
-        console.log(error);
-    }
+export const fetchQuotes = async ({ page = 1, limit = 10 } = {}) => {
+    const response = await freeApiClient.get(`/v1/public/quotes?page=${page}&limit=${limit}`);
+    return response.data;
 }
 
 export const fetchQuoteById = async (quoteId) => {
-    try {
-        const response = await freeApiClient.get("/v1/public/quotes/" + quoteId);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-    }
+    const response = await freeApiClient.get(`/v1/public/quotes/${quoteId}`);
+    return response.data;
+}
+
+export const fetchRandomQuote = async () => {
+    const response = await freeApiClient.get("/v1/public/quotes/quote/random");
+    return response.data;
 }
